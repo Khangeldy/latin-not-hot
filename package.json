@@ -8,14 +8,14 @@
     "inferno-component": "^3.10.1",
     "inferno-router": "^3.10.1",
     "inferno-scripts": "5.0.0",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
   },
   "scripts": {
     "start": "inferno-scripts start",
     "build": "inferno-scripts build",
     "test": "inferno-scripts test --env=jsdom",
-    "eject": "inferno-scripts eject"
+    "eject": "inferno-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "postcss": "^6.0.14"
