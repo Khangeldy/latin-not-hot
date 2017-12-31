@@ -1,0 +1,26 @@
+#app {
+  height: 100%;
+}
+.App {
+  text-align: center;
+  height: 100%;
+}
+
+.App-logo {
+  height: 80px;
+}
+
+.App-header {
+  background-color: #f8f8f8;
+  height: 60px;
+  color: #3d464d;
+}
+
+.App-intro {
+  font-size: large;
+  height: calc(100% - 60px);
+}
+
+code {
+  color: #e73a37;
+}
