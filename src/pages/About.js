@@ -1,5 +1,5 @@
-import Inferno from 'inferno'
+import { connect } from 'inferno-mobx'
 
-export default (props) => (
-  <div>Cәлем менің атым Хангелды Илебаев.</div>
-)
+export default connect(['store'], (props) => (
+  <div>Cәлем менің атым Хангелды Илебаев.{console.log(props)}</div>
+))

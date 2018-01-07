@@ -6,8 +6,11 @@
     "gh-pages": "^1.1.0",
     "inferno": "^3.10.1",
     "inferno-component": "^3.10.1",
+    "inferno-devtools": "^3.10.1",
+    "inferno-mobx": "^3.10.1",
     "inferno-router": "^3.10.1",
     "inferno-scripts": "5.0.0",
+    "mobx": "^3.4.1"
   },
   "scripts": {
     "start": "inferno-scripts start",
@@ -20,5 +23,5 @@
   "devDependencies": {
     "postcss": "^6.0.14"
   },
-  "homepage": "http://khangeldy.github.io/latin-not-hot"
+  "homepage": "https://khangeldy.github.io/latin-not-hot"
 }

@@ -1,19 +1,30 @@
-import Inferno from 'inferno'
+import Component from 'inferno-component'
 
-function onUpdate(e) {
-  alert(e, this)
-  e.target.focus()
-  e.target.blur()
+class OutputEditor extends Component {
+  componentDidMount() {
+    this.context.registerPane(this.textArea)
+  }
+
+  componentWillUnmount() {
+    this.context.unregisterPane(this.textArea)
+  }
+
+  render() {
+    const { value, label } = this.props
+    return (
+      <div className='c-textarea'>
+        <textarea
+          readonly
+          value={value}
+          rows={10}
+          ref={(el) => this.textArea = el}
+          >
+        </textarea>
+        <div>{label}</div>
+      </div>
+    )
+
+  }
 }
 
-export default ({ value, text }) => (
-  <div className='c-textarea'>
-    <textarea
-      readonly
-      value={value}
-      rows={10}
-      >
-    </textarea>
-    <div>{text}</div>
-  </div>
-)
+export default OutputEditor
