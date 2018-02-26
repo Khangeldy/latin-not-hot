@@ -63,12 +63,11 @@ class ScrollContainer extends Component {
 
     })
 
-
   }
 
   render() {
     return (
-      <div class="scroll-container">
+      <div class="scroll-container" style={this.props.style}>
         { this.props.children }
       </div>
     )

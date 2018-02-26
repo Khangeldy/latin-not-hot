@@ -20,7 +20,7 @@ class OutputEditor extends Component {
           ref={(el) => this.textArea = el}
           >
         </textarea>
-        <div>{label}</div>
+        <div className="name-alphabet">{label}</div>
       </div>
     )
 
