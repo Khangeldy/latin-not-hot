@@ -11,12 +11,28 @@
 }
 
 .App-header {
-  background-color: #f8f8f8;
+  background-color: #3F51B5;
   height: 60px;
-  color: #3d464d;
+  color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.App-header a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.App-header a.active {
+  color: #fff59c;
+}
+
+.App-header .btn {
+  color: #fff;
+  background-color: #000;
+  border: none;
+  border-radius: 3px;
 }
 
 .App-header button {
@@ -30,14 +46,14 @@
 }
 
 .App-header button.active {
-  background-color: #ccc;
-  border: 1px solid #eee;
+  background-color: #fff;
+  border: 1px solid #000;
   color: #000;
 }
 
 .App-intro {
   font-size: large;
-  height: calc(100% - 60px);
+  min-height: calc(100% - 60px);
 }
 
 code {
@@ -45,9 +61,10 @@ code {
 }
 
 .scroll-container {
-  height: 80vh;
+  height: 100%;
   width: 100vw;
   display: flex;
+  flex-direction: column;
 }
 
 .scroll-container > div {
@@ -61,18 +78,237 @@ code {
 }
 
 .cd-menu {
-  display: flex;
+  display: none;
   margin-right: auto;
   list-style: none;
   flex-direction: column;
 }
 
+.group-buttons select {
+  background-color: #000;
+}
+
+.name-alphabet {
+  color: black;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.c-textarea textarea {
+  border-color: rgba(96, 125, 139, 0.25);
+}
+
+.nav-burger {
+  width: 41px;
+  height: 26px;
+  position: absolute;
+  left: 20px;
+  cursor: pointer;
+  z-index: 300;
+}
+
+.nav-burger span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  border-radius: 2px;
+  width: 100%;
+  height: 4px;
+  transition: transform .7s ease-out;
+}
+
+.is-menu .nav-burger span {
+  background-color: #000;
+}
+
+.nav-burger span:first-child {
+  top: 0;
+}
+
+.is-menu span:first-child {
+  transform-origin: 0 0;
+  transform: rotateZ(38deg) scaleX(0.9);
+}
+
+.nav-burger span:nth-child(2) {
+  top: calc(50% - 2px);
+}
+
+.is-menu .nav-burger span:nth-child(2) {
+  display: none;
+}
+
+.nav-burger span:last-child {
+  top: auto;
+  bottom: 0;
+}
+
+.is-menu span:last-child {
+  transform-origin: bottom left;
+  transform: rotateZ(-38deg) scaleX(0.9);
+}
+
+.mobile-only-menu {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  bottom: 0;
+  background: #fff;
+  transition: left 0.5s ease-in;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobile-only-menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.mobile-only-menu li {
+  margin: 5px 0;
+}
+
+.mobile-only-menu a {
+  color: inherit;
+}
+
+.is-menu .mobile-only-menu {
+  left: 0;
+}
+
+.notebook {
+  color: #00f;
+  background-color: #fff;
+  background-image: linear-gradient(#f6abca 1px, transparent 1px),
+                    linear-gradient(#f6abca 1px, transparent 1px),
+                    linear-gradient(#9e9e9e 50%, transparent 90%),
+                    linear-gradient(#e8e8e8 1px, transparent 1px);
+  background-size: 1px 1px, 1px 1px, 1px 1px, 23px 23px;
+  background-repeat: repeat-y, repeat-y, repeat-y, repeat;
+  background-position: 22px 0, 24px 0, right 0, 0 50px;
+  font-size: 3vh;
+  min-height: 100%;
+  margin: 0;
+  padding-top: 4px;
+}
+
+.notebook.reversed {
+  border-right: none;
+  background-position: 94% 0, calc(94% + 2px) 0, 0 50px, left 0;
+}
+
+.basic {
+  padding: 30px 0 15px;
+}
+
+.basic label {
+  font-style: italic;
+}
+
+.basic input {
+  background-color: #fff;
+  padding: 3px 3px 3px 10px;
+  color: inherit;
+  border: 1px solid #c4c4eb;
+  border-radius: 4px;
+  padding-left: 10px;
+  margin: 5px 0;
+}
+
+.basic button {
+  background-color: #fff;
+  border: none;
+  border-radius: 2px;
+  padding: 4px 8px;
+  color: #2e3129;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.about-format {
+  padding: 0 10px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.about-format p {
+  word-spacing: 1.2rem;
+  font-variant: all-petite-caps;
+}
+
+.social-share {
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+}
+
+.social-share li {
+  margin-right: 7px;
+}
+
+.social-share a {
+  color: #009688;
+}
+
 @media (min-width: 768px) {
+  .mobile-only-menu {
+    display: none;
+  }
+  .nav-burger {
+    display: none;
+  }
+  .scroll-container {
+    flex-direction: row;
+  }
   .cd-menu {
+    display: flex;
     flex-direction: row;
   }
 
   .cd-menu li {
-    margin-right: 7px;
+    margin-right: 3vw;
+  }
+
+  .App-header .group-buttons {
+    margin-right: 10px;
+  }
+
+  .basic input {
+    margin-right: 10px;
+  }
+
+  .basic label {
+    margin-right: 10px;
+  }
+  .App-intro {
+    font-size: large;
+    height: calc(100% - 60px);
+  }
+}
+
+@media (max-width: 360px) {
+  .group-buttons {
+    width: 95px;
+
+    text-overflow: ellipsis;
+  }
+  .group-buttons button,
+  .group-buttons select {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .social-share svg {
+    width: 25px;
   }
 }

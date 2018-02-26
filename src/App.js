@@ -11,9 +11,8 @@ function toggleEditor(that, e) {
   e.stopPropagation()
 }
 
-function toggleMenu(that, e) {
-  that.setState({isMenu: !that.state.isMenu})
-  e.stopPropagation()
+function switchFontHandler(that, e) {
+  that.props.store.switchFont(e.target.value)
 }
 
 class App extends Component {
@@ -22,36 +21,67 @@ class App extends Component {
     isMenu: false
   }
 
+  componentDidMount() {
+    this.unlisten = this.context.router.listen((location, action) => {
+      document.body.classList.remove('is-menu')
+    })
+  }
+
+  componentWillUnmount() {
+    this.unlisten();
+  }
+
   render() {
 
     return (
       <div className="App">
         <header className="App-header">
+          <nav className="nav-burger" onClick={(e) => {
+            console.log('toggle')
+            e.stopPropagation();
+            document.body.classList.toggle('is-menu')
+          }}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </nav>
           <ul class="cd-menu">
-            <li><IndexLink>Редактор</IndexLink></li>
-            <li><Link to="about">Өзіміз жайлы</Link></li>
-            <li><Link to="handwrite">Қолма қол текст</Link></li>
-            <li><Link to="new">Жаңа әліпби</Link></li>
+            <li><IndexLink activeClassName="active">Редактор</IndexLink></li>
+            <li><Link to="/about" activeClassName="active">Біз кім?</Link></li>
+            <li><Link to="/handwrite" activeClassName="active">Қолжазба</Link></li>
+            <li><Link to="/new" activeClassName="active">Жаңа әліпби жасау</Link></li>
           </ul>
           <div className="group-buttons">
             {
                this.context.router.isActive('/') && <button
-                className={this.props.store.diffMode ? "active": ""}
+                className={this.props.store.diffMode ? "active btn": "btn"}
                 onClick={linkEvent(this, toggleEditor)}>Салыстыру режимі
               </button>
             }
 
             {
-              this.context.router.isActive('/handwrite') && <select>
-                <option>Почерк 1</option>
-                <option>Почерк 2</option>
-                <option>Почерк 3</option>
+              this.context.router.isActive('/handwrite') && <select onChange={linkEvent(this, switchFontHandler)} defautValue="Kalam">
+                <option value="Kalam">Kalam</option>
+                <option value="Dancing Script">Dancing Script</option>
+                <option value="Just Me Again Down Here">Just Me Again Down Here</option>
+                <option value="Marck Script">Marck Script</option>
+                <option value="Sedgwick Ave">Sedgwick Ave</option>
+                <option value="Caveat">Caveat</option>
+                <option value="Kavivanar">Kavivanar</option>
               </select>
             }
           </div>
         </header>
         <div className="App-intro">
           {this.props.children}
+        </div>
+        <div class="mobile-only-menu">
+          <ul>
+            <li><IndexLink activeClassName="active">Редактор</IndexLink></li>
+            <li><Link to="/about" activeClassName="active">Біз кім?</Link></li>
+            <li><Link to="/handwrite" activeClassName="active">Қолжазба</Link></li>
+            <li><Link to="/new" activeClassName="active">Жаңа әліпби жасау</Link></li>
+          </ul>
         </div>
       </div>
     );

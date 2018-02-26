@@ -27,7 +27,7 @@ class SourceEditor extends Component {
           ref={(el) => this.textArea = el}
           >
         </textarea>
-        <div>{label}</div>
+        <div className="name-alphabet">{label}-дан</div>
       </div>
     )
   }

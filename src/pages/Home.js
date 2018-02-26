@@ -19,13 +19,13 @@ class Home extends Component {
 
           {
             this.props.store.diffMode && <OutputEditor
-              label="Дәйекшелі(официалды)"
+              label="Акут(официалды)"
               value={store.diffValue}
             />
           }
 
           <OutputEditor
-              label="Kazak grammer nazi"
+              label="Kazak grammer"
               value={store.outputValue}
           />
         </ScrollContainer>
