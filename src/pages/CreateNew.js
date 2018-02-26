@@ -20,7 +20,8 @@ const fontList = `"Open Sans", "lucida grande", "Segoe UI", arial, verdana, "luc
 class CreateNew extends Component {
   state = {
     alpha: initialAlp,
-    author: 'Аноним'
+    author: 'Аноним',
+    isDownload: false
   }
   createCanvas = () => {
     const canvas = document.createElement('canvas'),
@@ -32,7 +33,7 @@ class CreateNew extends Component {
     ctx.fillRect(0, 0, width, height)
     ctx.font = '16px ' + fontList
     ctx.textAlign = 'center'
-    const url = 'https://khangeldy.github.io/latinnothot';
+    const url = 'https://khangeldy.github.io/latin-not-hot';
     ctx.fillStyle = '#3d3dfd';
     ctx.fillText(url, width / 2, height - 40);
     const meas = ctx.measureText(url);
@@ -76,9 +77,10 @@ class CreateNew extends Component {
       }
     }
 
-    // document.body.append(canvas)
-    const image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-    window.location.href=image;
+    let dt = canvas.toDataURL('image/png');
+    const button = document.getElementById('saveImage');
+    button.href = dt;
+    this.setState({isDownload: true})
   }
 
   convert = (string, charMaps) => {
@@ -127,8 +129,19 @@ class CreateNew extends Component {
     return <div  style={{backgroundColor: 'rgba(255, 235, 59, 0.5)',height: '100%'}}>
       <div className="basic">
         <label>Авторы</label>
-        <input className="basic" type="text" onChange={(e) => this.setState({author: e.target.value})} />
-        <button onClick={this.createCanvas} className="basic">Қабылдау</button>
+        <input className="basic" type="text" value={this.state.author} onChange={(e) => this.setState({author: e.target.value})} />
+        <button onClick={this.createCanvas} style={{display: this.state.isDownload ? "none": "inline-block"}} className="basic">Қабылдау</button>
+        <a download="QazaqLatin.png"
+          onClick={() => this.setState({
+            isDownload: false,
+            author: 'Аноним',
+            alpha: initialAlp
+          })}
+          style={{display: this.state.isDownload ? "inline-block": "none"}}
+          id="saveImage"
+          href=""
+          className="basic"
+        >Жүктеу</a>
       </div>
       <div style={{ columnCount: 3, padding: '20px 0', maxWidth: '800px', margin: '0 auto'}}>
         {this.renderList(this.state.alpha)}

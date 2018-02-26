@@ -226,6 +226,14 @@ code {
   color: #2e3129;
 }
 
+.basic a {
+  background-color: #fff;
+  border: none;
+  border-radius: 2px;
+  padding: 4px 8px;
+  color: #2e3129;
+}
+
 .center {
   display: flex;
   justify-content: center;
