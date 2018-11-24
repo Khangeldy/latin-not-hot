@@ -49,7 +49,7 @@ class App extends Component {
             <li><IndexLink activeClassName="active">Редактор</IndexLink></li>
             <li><Link to="/about" activeClassName="active">Kazak grammar</Link></li>
             <li><Link to="/handwrite" activeClassName="active">Қолжазба</Link></li>
-            <li><Link to="/new" activeClassName="active">Өз вариантыңды жасау</Link></li>
+            <li><Link to="/new" activeClassName="active">Өз вариантыңды жаса</Link></li>
           </ul>
           <div className="group-buttons">
             {
@@ -78,9 +78,9 @@ class App extends Component {
         <div class="mobile-only-menu">
           <ul>
             <li><IndexLink activeClassName="active">Редактор</IndexLink></li>
-            <li><Link to="/about" activeClassName="active">Біз кім?</Link></li>
+            <li><Link to="/about" activeClassName="active">Kazak grammar</Link></li>
             <li><Link to="/handwrite" activeClassName="active">Қолжазба</Link></li>
-            <li><Link to="/new" activeClassName="active">Жаңа әліпби жасау</Link></li>
+            <li><Link to="/new" activeClassName="active">Өз вариантыңды жаса</Link></li>
           </ul>
         </div>
       </div>
