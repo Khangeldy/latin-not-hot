@@ -250,8 +250,13 @@ code {
 }
 
 .about-format p {
-  word-spacing: 1.2rem;
+  word-spacing: 0.4rem;
   font-variant: all-petite-caps;
+}
+
+.about-links {
+  list-style: circle;
+  text-align: left;
 }
 
 .social-share {

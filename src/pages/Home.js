@@ -25,7 +25,7 @@ class Home extends Component {
           }
 
           <OutputEditor
-              label="Kazak grammer"
+              label="Kazak grammar"
               value={store.outputValue}
           />
         </ScrollContainer>

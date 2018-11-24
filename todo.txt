@@ -1,0 +1,13 @@
+1 ? uw : (e ? iw : 1w)
+if (kirme) 1 iw uw 1w
+
+if (kirme) ? i(Үлкен әрпі turkish I. Төбесінде нүктесі бар) : e ? iy : 1y
+
+в = kirme
+ф = kirme
+ц
+ч
+щ
+х
+
+кемие kеmiy

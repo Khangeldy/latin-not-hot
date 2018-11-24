@@ -47,9 +47,9 @@ class App extends Component {
           </nav>
           <ul class="cd-menu">
             <li><IndexLink activeClassName="active">Редактор</IndexLink></li>
-            <li><Link to="/about" activeClassName="active">Біз кім?</Link></li>
+            <li><Link to="/about" activeClassName="active">Kazak grammar</Link></li>
             <li><Link to="/handwrite" activeClassName="active">Қолжазба</Link></li>
-            <li><Link to="/new" activeClassName="active">Жаңа әліпби жасау</Link></li>
+            <li><Link to="/new" activeClassName="active">Өз вариантыңды жасау</Link></li>
           </ul>
           <div className="group-buttons">
             {

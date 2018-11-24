@@ -3,8 +3,22 @@ import { connect } from 'inferno-mobx'
 export default connect(['store'], (props) => (
   <div className="center about-format">
     <p>
-      Cәлем менің атым Хангелды Илебаев. Мен бағдарламашымын. Анда санда жеке <a href="http://bbazar.kz">блог</a> жүргіземін.
-      Егер менің жасаған дүниелерім сізге осы бастан ұнап жатса, оны бейжай қалдырмай, әлеуметтік желіде бөлісуіңізді сұраймын. Сіз мұндай жестпен маған үлкен көмек көрсетесіз. Рахмет.
+      Біз жайлы пресса не дейді. Сұхбаттар мен мақалалар.
+    </p>
+    <ul className="about-links">
+      <li><a target="_blank" href="https://the-steppe.com/news/razvitie/2017-04-27/latinica">the-steppe.com</a></li>
+      <li><a target="_blank" href="https://www.youtube.com/watch?v=ukn-McQMbfI">Erjan Äcim(youtube)</a></li>
+      <li><a target="_blank" href="https://www.youtube.com/watch?v=ukn-McQMbfI">Men Qazaq(youtube)</a></li>
+      <li><a target="_blank" href="https://baribar.kz/34043/latyn-alipbiininh-qanday-nusqalary-bar/">baribar.kz</a></li>
+      <li><a target="_blank" href="https://yvision.kz/post/758798">KESANTIELU DASEFERN(yvision)</a></li>
+      <li><a target="_blank" href="https://www.qamshy.kz/article/til-ynstytwti-men-kazak-grammar-dinh-zhekpe-zhegi.html">Qamshy.kz</a></li>
+      <li><a target="_blank" href="http://today.kz/news/kazahstan/2017-10-30/753383-kanagattandrlmagandktarzdan-kazak-grammar-razrabotali-variant-latinitsyi/">today.kz</a></li>
+      <li><a target="_blank" href="http://kerekinfo.kz/2017/11/17/kazak-grammar-alpabeti.html">kerekinfo.kz</a></li>
+      <li><a target="_blank" href="http://euromaidanpress.com/2017/04/18/moscow-reacts-to-kazakhstan-and-kyrgyzstan-switching-from-cyrillic-with-hysterics-euromaidan-press/">euromaidanpress.com</a></li>
+      <li><a target="_blank" href="http://polandball.wikia.com/wiki/User_blog:KurwaAntics/Kazak_alphabet_(again)">polandball.wikia.com</a></li>
+    </ul>
+    <p>
+      Егер сізге біздің жұмысым ұнаса әлеуметтік желілерде бөлісуге шақырамыз. Рақмет көп көп.
     </p>
     <ul className="social-share">
       <li>

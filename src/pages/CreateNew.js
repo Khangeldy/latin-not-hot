@@ -111,13 +111,13 @@ class CreateNew extends Component {
     if(!e.target.value.trim()) {
       return;
     }
-    const val = e.target.value.substr(0, 2).replace(/[^\u0040-\u024f']/gi, '').toUpperCase();
+    const val = e.target.value.substr(0, 2).replace(/[^\u0040-\u024f\u1e00-\u1eff']/gi, '').toUpperCase();
     this.setState({alpha: Object.assign({}, this.state.alpha, {[key]: val})})
   }
 
   onBlur = (e) => {
     const val = e.target.value;
-    if(!val && /\w/.test(val)) {
+    if(!val) {
       this.setState({
         alpha: Object.assign({}, this.state.alpha, {
           [e.target.name]: initialAlp[e.target.name]
